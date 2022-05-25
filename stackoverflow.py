@@ -12,9 +12,7 @@ class Stackoverflow:
         datetime_from = datetime.date(fy, fm, fd)
         datetime_to = datetime.date(ty, tm, td)
         params = {"fromdate": str(int(time.mktime(datetime_from.timetuple()))), "todate": str(int(time.mktime(datetime_to.timetuple()))), "order" : "desc", "sort" : "activity", "tagged" : "python", "site" : "stackoverflow"}
-        print(params)
         response = requests.get(url, params=params)
-        print(response)
         return response.json()
 
 if __name__ == '__main__':
